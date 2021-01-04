@@ -11,7 +11,7 @@
     <groupId>com.hyj.yjmall</groupId>
     <artifactId>order</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>order</name>
+    <name>yjmall-order</name>
     <description>有钱商城-订单服务</description>
 
     <properties>
