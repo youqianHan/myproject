@@ -5,16 +5,61 @@
 
     <groupId>com.hyj.yjmall</groupId>
     <artifactId>yjmall</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>yjmall</name>
+    <version>1.0-SNAPSHOT</version>
     <description>有钱商城-聚合服务</description>
     <packaging>pom</packaging>
-
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.0.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
     <modules>
         <module>yjmall-coupon</module>
         <module>yjmall-member</module>
         <module>yjmall-order</module>
         <module>yjmall-product</module>
         <module>yjmall-ware</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>yjmall-common</module>
     </modules>
+
+
+
+    <properties>
+        <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.hyj.yjmall</groupId>
+            <artifactId>yjmall-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--Spring Cloud 相关依赖-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--Spring Cloud Alibaba 相关依赖-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
