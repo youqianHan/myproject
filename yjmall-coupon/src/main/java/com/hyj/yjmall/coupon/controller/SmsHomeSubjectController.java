@@ -16,7 +16,6 @@ import com.hyj.common.utils.PageUtils;
 import com.hyj.common.utils.R;
 
 
-
 /**
  * 首页专题表【jd首页下面很多专题，每个专题链接新的页面，展示专题商品信息】
  *
@@ -35,7 +34,7 @@ public class SmsHomeSubjectController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:smshomesubject:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = smsHomeSubjectService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -47,8 +46,8 @@ public class SmsHomeSubjectController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:smshomesubject:info")
-    public R info(@PathVariable("id") Long id){
-		SmsHomeSubjectEntity smsHomeSubject = smsHomeSubjectService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SmsHomeSubjectEntity smsHomeSubject = smsHomeSubjectService.getById(id);
 
         return R.ok().put("smsHomeSubject", smsHomeSubject);
     }
@@ -58,8 +57,8 @@ public class SmsHomeSubjectController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:smshomesubject:save")
-    public R save(@RequestBody SmsHomeSubjectEntity smsHomeSubject){
-		smsHomeSubjectService.save(smsHomeSubject);
+    public R save(@RequestBody SmsHomeSubjectEntity smsHomeSubject) {
+        smsHomeSubjectService.save(smsHomeSubject);
 
         return R.ok();
     }
@@ -69,8 +68,8 @@ public class SmsHomeSubjectController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:smshomesubject:update")
-    public R update(@RequestBody SmsHomeSubjectEntity smsHomeSubject){
-		smsHomeSubjectService.updateById(smsHomeSubject);
+    public R update(@RequestBody SmsHomeSubjectEntity smsHomeSubject) {
+        smsHomeSubjectService.updateById(smsHomeSubject);
 
         return R.ok();
     }
@@ -80,8 +79,8 @@ public class SmsHomeSubjectController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:smshomesubject:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsHomeSubjectService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        smsHomeSubjectService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

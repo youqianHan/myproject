@@ -1,4 +1,4 @@
-package com.hyj.yjmall.yjmallgateway;
+package com.hyj.yjmallgateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

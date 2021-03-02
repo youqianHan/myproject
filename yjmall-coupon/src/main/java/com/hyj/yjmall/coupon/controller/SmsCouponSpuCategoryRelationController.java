@@ -16,7 +16,6 @@ import com.hyj.common.utils.PageUtils;
 import com.hyj.common.utils.R;
 
 
-
 /**
  * 优惠券分类关联
  *
@@ -35,7 +34,7 @@ public class SmsCouponSpuCategoryRelationController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:smscouponspucategoryrelation:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = smsCouponSpuCategoryRelationService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -47,8 +46,8 @@ public class SmsCouponSpuCategoryRelationController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:smscouponspucategoryrelation:info")
-    public R info(@PathVariable("id") Long id){
-		SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation = smsCouponSpuCategoryRelationService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation = smsCouponSpuCategoryRelationService.getById(id);
 
         return R.ok().put("smsCouponSpuCategoryRelation", smsCouponSpuCategoryRelation);
     }
@@ -58,8 +57,8 @@ public class SmsCouponSpuCategoryRelationController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:smscouponspucategoryrelation:save")
-    public R save(@RequestBody SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation){
-		smsCouponSpuCategoryRelationService.save(smsCouponSpuCategoryRelation);
+    public R save(@RequestBody SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation) {
+        smsCouponSpuCategoryRelationService.save(smsCouponSpuCategoryRelation);
 
         return R.ok();
     }
@@ -69,8 +68,8 @@ public class SmsCouponSpuCategoryRelationController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:smscouponspucategoryrelation:update")
-    public R update(@RequestBody SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation){
-		smsCouponSpuCategoryRelationService.updateById(smsCouponSpuCategoryRelation);
+    public R update(@RequestBody SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation) {
+        smsCouponSpuCategoryRelationService.updateById(smsCouponSpuCategoryRelation);
 
         return R.ok();
     }
@@ -80,8 +79,8 @@ public class SmsCouponSpuCategoryRelationController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:smscouponspucategoryrelation:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsCouponSpuCategoryRelationService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        smsCouponSpuCategoryRelationService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

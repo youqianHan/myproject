@@ -16,7 +16,6 @@ import com.hyj.common.utils.PageUtils;
 import com.hyj.common.utils.R;
 
 
-
 /**
  * 秒杀商品通知订阅
  *
@@ -35,7 +34,7 @@ public class SmsSeckillSkuNoticeController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:smsseckillskunotice:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = smsSeckillSkuNoticeService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -47,8 +46,8 @@ public class SmsSeckillSkuNoticeController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:smsseckillskunotice:info")
-    public R info(@PathVariable("id") Long id){
-		SmsSeckillSkuNoticeEntity smsSeckillSkuNotice = smsSeckillSkuNoticeService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SmsSeckillSkuNoticeEntity smsSeckillSkuNotice = smsSeckillSkuNoticeService.getById(id);
 
         return R.ok().put("smsSeckillSkuNotice", smsSeckillSkuNotice);
     }
@@ -58,8 +57,8 @@ public class SmsSeckillSkuNoticeController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:smsseckillskunotice:save")
-    public R save(@RequestBody SmsSeckillSkuNoticeEntity smsSeckillSkuNotice){
-		smsSeckillSkuNoticeService.save(smsSeckillSkuNotice);
+    public R save(@RequestBody SmsSeckillSkuNoticeEntity smsSeckillSkuNotice) {
+        smsSeckillSkuNoticeService.save(smsSeckillSkuNotice);
 
         return R.ok();
     }
@@ -69,8 +68,8 @@ public class SmsSeckillSkuNoticeController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:smsseckillskunotice:update")
-    public R update(@RequestBody SmsSeckillSkuNoticeEntity smsSeckillSkuNotice){
-		smsSeckillSkuNoticeService.updateById(smsSeckillSkuNotice);
+    public R update(@RequestBody SmsSeckillSkuNoticeEntity smsSeckillSkuNotice) {
+        smsSeckillSkuNoticeService.updateById(smsSeckillSkuNotice);
 
         return R.ok();
     }
@@ -80,8 +79,8 @@ public class SmsSeckillSkuNoticeController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:smsseckillskunotice:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsSeckillSkuNoticeService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        smsSeckillSkuNoticeService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

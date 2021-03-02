@@ -16,7 +16,6 @@ import com.hyj.common.utils.PageUtils;
 import com.hyj.common.utils.R;
 
 
-
 /**
  * 秒杀活动
  *
@@ -35,7 +34,7 @@ public class SmsSeckillPromotionController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:smsseckillpromotion:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = smsSeckillPromotionService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -47,8 +46,8 @@ public class SmsSeckillPromotionController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:smsseckillpromotion:info")
-    public R info(@PathVariable("id") Long id){
-		SmsSeckillPromotionEntity smsSeckillPromotion = smsSeckillPromotionService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SmsSeckillPromotionEntity smsSeckillPromotion = smsSeckillPromotionService.getById(id);
 
         return R.ok().put("smsSeckillPromotion", smsSeckillPromotion);
     }
@@ -58,8 +57,8 @@ public class SmsSeckillPromotionController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:smsseckillpromotion:save")
-    public R save(@RequestBody SmsSeckillPromotionEntity smsSeckillPromotion){
-		smsSeckillPromotionService.save(smsSeckillPromotion);
+    public R save(@RequestBody SmsSeckillPromotionEntity smsSeckillPromotion) {
+        smsSeckillPromotionService.save(smsSeckillPromotion);
 
         return R.ok();
     }
@@ -69,8 +68,8 @@ public class SmsSeckillPromotionController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:smsseckillpromotion:update")
-    public R update(@RequestBody SmsSeckillPromotionEntity smsSeckillPromotion){
-		smsSeckillPromotionService.updateById(smsSeckillPromotion);
+    public R update(@RequestBody SmsSeckillPromotionEntity smsSeckillPromotion) {
+        smsSeckillPromotionService.updateById(smsSeckillPromotion);
 
         return R.ok();
     }
@@ -80,8 +79,8 @@ public class SmsSeckillPromotionController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:smsseckillpromotion:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsSeckillPromotionService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        smsSeckillPromotionService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

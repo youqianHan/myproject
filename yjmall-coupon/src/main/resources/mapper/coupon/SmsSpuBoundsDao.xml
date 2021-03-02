@@ -3,7 +3,7 @@
 
 <mapper namespace="com.hyj.yjmall.coupon.dao.SmsSpuBoundsDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.hyj.yjmall.coupon.entity.SmsSpuBoundsEntity" id="smsSpuBoundsMap">
         <result property="id" column="id"/>
         <result property="spuId" column="spu_id"/>

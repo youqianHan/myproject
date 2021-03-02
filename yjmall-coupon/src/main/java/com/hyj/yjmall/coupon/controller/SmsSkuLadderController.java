@@ -16,7 +16,6 @@ import com.hyj.common.utils.PageUtils;
 import com.hyj.common.utils.R;
 
 
-
 /**
  * 商品阶梯价格
  *
@@ -35,7 +34,7 @@ public class SmsSkuLadderController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:smsskuladder:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = smsSkuLadderService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -47,8 +46,8 @@ public class SmsSkuLadderController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:smsskuladder:info")
-    public R info(@PathVariable("id") Long id){
-		SmsSkuLadderEntity smsSkuLadder = smsSkuLadderService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SmsSkuLadderEntity smsSkuLadder = smsSkuLadderService.getById(id);
 
         return R.ok().put("smsSkuLadder", smsSkuLadder);
     }
@@ -58,8 +57,8 @@ public class SmsSkuLadderController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:smsskuladder:save")
-    public R save(@RequestBody SmsSkuLadderEntity smsSkuLadder){
-		smsSkuLadderService.save(smsSkuLadder);
+    public R save(@RequestBody SmsSkuLadderEntity smsSkuLadder) {
+        smsSkuLadderService.save(smsSkuLadder);
 
         return R.ok();
     }
@@ -69,8 +68,8 @@ public class SmsSkuLadderController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:smsskuladder:update")
-    public R update(@RequestBody SmsSkuLadderEntity smsSkuLadder){
-		smsSkuLadderService.updateById(smsSkuLadder);
+    public R update(@RequestBody SmsSkuLadderEntity smsSkuLadder) {
+        smsSkuLadderService.updateById(smsSkuLadder);
 
         return R.ok();
     }
@@ -80,8 +79,8 @@ public class SmsSkuLadderController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:smsskuladder:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsSkuLadderService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        smsSkuLadderService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

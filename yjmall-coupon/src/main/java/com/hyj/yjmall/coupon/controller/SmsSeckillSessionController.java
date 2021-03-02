@@ -16,7 +16,6 @@ import com.hyj.common.utils.PageUtils;
 import com.hyj.common.utils.R;
 
 
-
 /**
  * 秒杀活动场次
  *
@@ -35,7 +34,7 @@ public class SmsSeckillSessionController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:smsseckillsession:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = smsSeckillSessionService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -47,8 +46,8 @@ public class SmsSeckillSessionController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:smsseckillsession:info")
-    public R info(@PathVariable("id") Long id){
-		SmsSeckillSessionEntity smsSeckillSession = smsSeckillSessionService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SmsSeckillSessionEntity smsSeckillSession = smsSeckillSessionService.getById(id);
 
         return R.ok().put("smsSeckillSession", smsSeckillSession);
     }
@@ -58,8 +57,8 @@ public class SmsSeckillSessionController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:smsseckillsession:save")
-    public R save(@RequestBody SmsSeckillSessionEntity smsSeckillSession){
-		smsSeckillSessionService.save(smsSeckillSession);
+    public R save(@RequestBody SmsSeckillSessionEntity smsSeckillSession) {
+        smsSeckillSessionService.save(smsSeckillSession);
 
         return R.ok();
     }
@@ -69,8 +68,8 @@ public class SmsSeckillSessionController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:smsseckillsession:update")
-    public R update(@RequestBody SmsSeckillSessionEntity smsSeckillSession){
-		smsSeckillSessionService.updateById(smsSeckillSession);
+    public R update(@RequestBody SmsSeckillSessionEntity smsSeckillSession) {
+        smsSeckillSessionService.updateById(smsSeckillSession);
 
         return R.ok();
     }
@@ -80,8 +79,8 @@ public class SmsSeckillSessionController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:smsseckillsession:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsSeckillSessionService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        smsSeckillSessionService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

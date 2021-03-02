@@ -16,7 +16,6 @@ import com.hyj.common.utils.PageUtils;
 import com.hyj.common.utils.R;
 
 
-
 /**
  * 商品会员价格
  *
@@ -35,7 +34,7 @@ public class SmsMemberPriceController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:smsmemberprice:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = smsMemberPriceService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -47,8 +46,8 @@ public class SmsMemberPriceController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:smsmemberprice:info")
-    public R info(@PathVariable("id") Long id){
-		SmsMemberPriceEntity smsMemberPrice = smsMemberPriceService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SmsMemberPriceEntity smsMemberPrice = smsMemberPriceService.getById(id);
 
         return R.ok().put("smsMemberPrice", smsMemberPrice);
     }
@@ -58,8 +57,8 @@ public class SmsMemberPriceController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:smsmemberprice:save")
-    public R save(@RequestBody SmsMemberPriceEntity smsMemberPrice){
-		smsMemberPriceService.save(smsMemberPrice);
+    public R save(@RequestBody SmsMemberPriceEntity smsMemberPrice) {
+        smsMemberPriceService.save(smsMemberPrice);
 
         return R.ok();
     }
@@ -69,8 +68,8 @@ public class SmsMemberPriceController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:smsmemberprice:update")
-    public R update(@RequestBody SmsMemberPriceEntity smsMemberPrice){
-		smsMemberPriceService.updateById(smsMemberPrice);
+    public R update(@RequestBody SmsMemberPriceEntity smsMemberPrice) {
+        smsMemberPriceService.updateById(smsMemberPrice);
 
         return R.ok();
     }
@@ -80,8 +79,8 @@ public class SmsMemberPriceController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:smsmemberprice:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsMemberPriceService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        smsMemberPriceService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

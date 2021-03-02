@@ -18,7 +18,6 @@ import com.hyj.common.utils.PageUtils;
 import com.hyj.common.utils.R;
 
 
-
 /**
  * 优惠券信息
  *
@@ -39,15 +38,15 @@ public class SmsCouponController {
     private Integer age;
 
     @RequestMapping("test")
-    public R test(){
-        return R.ok().put("name",name).put("age",age);
+    public R test() {
+        return R.ok().put("name", name).put("age", age);
     }
 
     @RequestMapping("/member/list")
-    public R menberCoupons(){
+    public R menberCoupons() {
         SmsCouponEntity couponEntity = new SmsCouponEntity();
         couponEntity.setCouponName("100-666");
-        return R.ok().put("coupons",Arrays.asList(couponEntity));
+        return R.ok().put("coupons", Arrays.asList(couponEntity));
     }
 
 
@@ -56,7 +55,7 @@ public class SmsCouponController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:smscoupon:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = smsCouponService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -68,8 +67,8 @@ public class SmsCouponController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:smscoupon:info")
-    public R info(@PathVariable("id") Long id){
-		SmsCouponEntity smsCoupon = smsCouponService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SmsCouponEntity smsCoupon = smsCouponService.getById(id);
 
         return R.ok().put("smsCoupon", smsCoupon);
     }
@@ -79,8 +78,8 @@ public class SmsCouponController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:smscoupon:save")
-    public R save(@RequestBody SmsCouponEntity smsCoupon){
-		smsCouponService.save(smsCoupon);
+    public R save(@RequestBody SmsCouponEntity smsCoupon) {
+        smsCouponService.save(smsCoupon);
 
         return R.ok();
     }
@@ -90,8 +89,8 @@ public class SmsCouponController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:smscoupon:update")
-    public R update(@RequestBody SmsCouponEntity smsCoupon){
-		smsCouponService.updateById(smsCoupon);
+    public R update(@RequestBody SmsCouponEntity smsCoupon) {
+        smsCouponService.updateById(smsCoupon);
 
         return R.ok();
     }
@@ -101,8 +100,8 @@ public class SmsCouponController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:smscoupon:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsCouponService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        smsCouponService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

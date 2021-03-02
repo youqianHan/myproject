@@ -16,7 +16,6 @@ import com.hyj.common.utils.PageUtils;
 import com.hyj.common.utils.R;
 
 
-
 /**
  * 首页轮播广告
  *
@@ -35,7 +34,7 @@ public class SmsHomeAdvController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:smshomeadv:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = smsHomeAdvService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -47,8 +46,8 @@ public class SmsHomeAdvController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:smshomeadv:info")
-    public R info(@PathVariable("id") Long id){
-		SmsHomeAdvEntity smsHomeAdv = smsHomeAdvService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SmsHomeAdvEntity smsHomeAdv = smsHomeAdvService.getById(id);
 
         return R.ok().put("smsHomeAdv", smsHomeAdv);
     }
@@ -58,8 +57,8 @@ public class SmsHomeAdvController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:smshomeadv:save")
-    public R save(@RequestBody SmsHomeAdvEntity smsHomeAdv){
-		smsHomeAdvService.save(smsHomeAdv);
+    public R save(@RequestBody SmsHomeAdvEntity smsHomeAdv) {
+        smsHomeAdvService.save(smsHomeAdv);
 
         return R.ok();
     }
@@ -69,8 +68,8 @@ public class SmsHomeAdvController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:smshomeadv:update")
-    public R update(@RequestBody SmsHomeAdvEntity smsHomeAdv){
-		smsHomeAdvService.updateById(smsHomeAdv);
+    public R update(@RequestBody SmsHomeAdvEntity smsHomeAdv) {
+        smsHomeAdvService.updateById(smsHomeAdv);
 
         return R.ok();
     }
@@ -80,8 +79,8 @@ public class SmsHomeAdvController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:smshomeadv:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsHomeAdvService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        smsHomeAdvService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

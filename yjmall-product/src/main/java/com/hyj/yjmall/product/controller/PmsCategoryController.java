@@ -1,6 +1,7 @@
 package com.hyj.yjmall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,14 @@ public class PmsCategoryController {
     @Autowired
     private PmsCategoryService pmsCategoryService;
 
+
+    @RequestMapping("/list/tree")
+    public R list(){
+        List<PmsCategoryEntity> entites = pmsCategoryService.listWithTree();
+        return R.ok().put("data",entites);
+    }
+
+
     /**
      * 列表
      */
@@ -37,7 +46,6 @@ public class PmsCategoryController {
     //@RequiresPermissions("product:pmscategory:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = pmsCategoryService.queryPage(params);
-
         return R.ok().put("page", page);
     }
 

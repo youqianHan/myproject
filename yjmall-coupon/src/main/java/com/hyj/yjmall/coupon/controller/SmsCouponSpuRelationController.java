@@ -16,7 +16,6 @@ import com.hyj.common.utils.PageUtils;
 import com.hyj.common.utils.R;
 
 
-
 /**
  * 优惠券与产品关联
  *
@@ -35,7 +34,7 @@ public class SmsCouponSpuRelationController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:smscouponspurelation:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = smsCouponSpuRelationService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -47,8 +46,8 @@ public class SmsCouponSpuRelationController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:smscouponspurelation:info")
-    public R info(@PathVariable("id") Long id){
-		SmsCouponSpuRelationEntity smsCouponSpuRelation = smsCouponSpuRelationService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SmsCouponSpuRelationEntity smsCouponSpuRelation = smsCouponSpuRelationService.getById(id);
 
         return R.ok().put("smsCouponSpuRelation", smsCouponSpuRelation);
     }
@@ -58,8 +57,8 @@ public class SmsCouponSpuRelationController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:smscouponspurelation:save")
-    public R save(@RequestBody SmsCouponSpuRelationEntity smsCouponSpuRelation){
-		smsCouponSpuRelationService.save(smsCouponSpuRelation);
+    public R save(@RequestBody SmsCouponSpuRelationEntity smsCouponSpuRelation) {
+        smsCouponSpuRelationService.save(smsCouponSpuRelation);
 
         return R.ok();
     }
@@ -69,8 +68,8 @@ public class SmsCouponSpuRelationController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:smscouponspurelation:update")
-    public R update(@RequestBody SmsCouponSpuRelationEntity smsCouponSpuRelation){
-		smsCouponSpuRelationService.updateById(smsCouponSpuRelation);
+    public R update(@RequestBody SmsCouponSpuRelationEntity smsCouponSpuRelation) {
+        smsCouponSpuRelationService.updateById(smsCouponSpuRelation);
 
         return R.ok();
     }
@@ -80,8 +79,8 @@ public class SmsCouponSpuRelationController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:smscouponspurelation:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsCouponSpuRelationService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        smsCouponSpuRelationService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

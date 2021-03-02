@@ -50,7 +50,7 @@
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
-                <scope>import</scope>
+                <scope>import</scope>2.
             </dependency>
             <!--Spring Cloud Alibaba 相关依赖-->
             <dependency>
